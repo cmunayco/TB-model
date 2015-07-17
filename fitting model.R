@@ -149,7 +149,7 @@ par(mar=c(5,4,4,2)+0.1)
 plot(1:23,Data1[,2],pch = 18, cex = 2, xlab="time, year", ylab="Number of TB cases",
      ylim=c(0,250000))
 par(new=T)
-plot(1:23, (out[c(3:25),c(4)]+ out[c(3:25),c(5)]),xlab="",ylab="",
+plot(1:23, (out[c(3:25),c(4)]+ out[c(3:25),c(5)]),xlab="",ylab="", col="red",
      ylim=c(0,250000))
 
 
@@ -205,3 +205,4 @@ ggplot(data=betacurve,mapping=aes(x=beta,y=nll))+geom_line()
 fit <- optim(fn=nll,par=0.0000001,method="Brent",lower=0.00000001,upper=0.000001)
 fit
 
+write.csv(Data1,"Data1.csv")
